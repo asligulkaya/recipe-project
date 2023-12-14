@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="recipes">
+      <router-link
+        v-for="recipe in recipes"
+        :key="recipe.id"
+        :to="{
+          name: 'recipe.show',
+          params: { id: recipe.id, slug: recipe.slug },
+        }"
+      >
+        <h2>{{ recipe.title }}</h2>
+        <img :src="`/images/${recipe.image}`" :alt="recipe.title" />
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import sourceData from "@/data.json";
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      recipes: sourceData.recipes,
+    };
+  },
+};
 </script>
