@@ -1,7 +1,7 @@
 <template>
     <div class="container" id="foodlist">
       <div class="row">
-        <Food v-for="recipe in recipes"
+        <Food v-for="recipe in recipes.slice(0, limit || recipes.length)"
             class="my-3"
           :key="recipe.id"
           :to="{
@@ -27,6 +27,9 @@
         recipes: sourceData.recipes,
       };
     },
+    props: {
+      limit: Number,
+    },  
     components: {
     Food,
   },

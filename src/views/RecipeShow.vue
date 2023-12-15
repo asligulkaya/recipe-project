@@ -5,8 +5,8 @@
       <div class="">
         <div class="">
           <div class="" >
-            <div class="">
-              <div class="p-5 border w-25 ml-5 ingere" >
+            <div class="d-flex">
+              <div class="p-5 border w-50 ml-5 mt-5 ingere" >
                 <h2 class="u-align-center u-text u-text-1">Ingredients</h2>
                 <p class="u-align-center u-text u-text-body-alt-color u-text-2">
                   <ul>
@@ -16,6 +16,9 @@
                   </ul>
                 </p>
               </div>
+              <!-- <div class="p-5">
+                <h1 class="text-bold baslik u-align-center u-text u-text-1 text-white">{{recipe.title}}</h1>
+                </div> -->
             </div>
           </div>
         </div>
@@ -23,7 +26,7 @@
     </div>
   </section>
   <div class="row w-full">
-    <div class="bg-black px-5">
+    <div class="bg-black px-5 col-9">
       <h1 class="mx-auto text-center title">{{ recipe.title }}</h1>
       <div class="recipe-details d-flex flex-column align-items-center">
         <img
@@ -61,11 +64,11 @@
         </div>
       </div>
     </div>
-    <!-- <div class="col-3">
+    <div class="col-3">
       <div class="mx-auto" style="width: 100%">
-        <FoodList style="width: 80%" />
+        <FoodList :limit=3 style="width: 80%" />
       </div>
-    </div> -->
+    </div>
   </div>
   <Footer />
 </template>
@@ -85,6 +88,10 @@ export default {
     backgroundImageStyle() {
       return {
         backgroundImage: `url(/images/${this.recipe.image})`,
+        webkitBackgroundSize: "cover",
+        mozBackgroundSize: "cover",
+        oBackgroundSize: "cover",
+        backgroundSize: "cover",
         
       };
     },
@@ -99,6 +106,17 @@ export default {
 
 </script>
 <style scoped>
+
+.baslik{
+  font-family: "Zilla Slab", serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  color: white; 
+}
 
 .ingere{
   background-color: rgba(0, 0, 0, 0.6);
