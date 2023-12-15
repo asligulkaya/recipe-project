@@ -9,7 +9,7 @@
   background-size: cover;
 ">
 <NavbarComp/>
-<div class="mask rounded" style="background-color: rgba(0, 0, 0, 0.6);">
+<div class="mask rounded mt-5" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-white py-4">
       <h1 class="mb-3">Welcome</h1>

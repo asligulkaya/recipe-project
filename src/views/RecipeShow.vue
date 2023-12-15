@@ -1,21 +1,27 @@
 <template>
   <NavbarComp />
-  <section class="u-align-left u-clearfix u-image u-section-1" id="carousel_7a39">
-        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-          <div class="data-layout-selected u-clearfix u-gutter-30 u-layout-wrap u-layout-wrap-1">
-            <div class="u-gutter-0 u-layout">
-              <div class="u-layout-col" >
-                <div class="u-black u-container-style u-layout-cell u-left-cell u-opacity u-opacity-75 u-right-cell u-size-60 u-layout-cell-1">
-                  <div class="u-border-8 u-border-palette-3-base u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1" >
-                    <h2 class="u-align-center u-text u-text-1"> Ingredients</h2>
-                    <p class="u-align-center u-text u-text-body-alt-color u-text-2">Make it something to look forward to with stacks of pancakes, healthy smoothie bowls or perfect poached eggs.&nbsp;</p>
-                  </div>
-                </div>
+  <section class="u-section-1" id="carousel_7a39" :style="backgroundImageStyle">
+    <div class="">
+      <div class="">
+        <div class="">
+          <div class="" >
+            <div class="">
+              <div class="p-5 border w-25 ml-5 ingere" >
+                <h2 class="u-align-center u-text u-text-1">Ingredients</h2>
+                <p class="u-align-center u-text u-text-body-alt-color u-text-2">
+                  <ul>
+                    <li v-for="ingredient in recipe.ingredients" :key="ingredient">
+                      {{ ingredient }}
+                    </li>
+                  </ul>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
   <div class="row w-full">
     <div class="bg-black px-5">
       <h1 class="mx-auto text-center title">{{ recipe.title }}</h1>
@@ -61,17 +67,27 @@
       </div>
     </div> -->
   </div>
+  <Footer />
 </template>
 <script>
 import sourceData from "@/data.json";
 import NavbarComp from "@/components/NavbarComp.vue";
 import FoodList from "@/components/FoodList.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   components: {
     NavbarComp,
     FoodList,
-  },
+    Footer,
+  }, 
   computed: {
+    backgroundImageStyle() {
+      return {
+        backgroundImage: `url(/images/${this.recipe.image})`,
+        
+      };
+    },
     recipeId() {
       return parseInt(this.$route.params.id);
     },
@@ -80,8 +96,17 @@ export default {
     },
   },
 };
+
 </script>
 <style scoped>
+
+.ingere{
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: "Zilla Slab", serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
 .ingredients {
   text-align: left !important;
 }
@@ -91,10 +116,10 @@ export default {
 }
 
 .u-section-1 {
-  background-image: url("../../public/images/chicken-alfredo.jpg");
-  background-position: 50% 50%;
+  background-position: center center;
   background-repeat: no-repeat;
-  width: 100%;
+  background-size: cover;
+  min-height: 854px;
 }
 
 .u-section-1 .u-sheet-1 {
