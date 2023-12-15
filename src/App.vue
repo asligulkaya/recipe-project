@@ -10,6 +10,7 @@
 import sourceData from "@/data.json";
 import NavbarComp from "@/components/NavbarComp.vue";
 import Footer from "@/components/Footer.vue";
+
 export default {
   data() {
     return {

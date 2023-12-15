@@ -12,9 +12,9 @@
 <div class="mask rounded" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-white py-4">
-      <h1 class="mb-3">Heading</h1>
-      <h4 class="mb-3">Subheading</h4>
-      <a class="btn btn-outline-light btn-lg" v-on:click="scroll" style="transition: 2s;" href="#foodlist" role="button">See my recipes</a>
+      <h1 class="mb-3">Welcome</h1>
+      <h4 class="mb-3">Are you hungry?</h4>
+      <a class="btn btn-outline-light btn-lg" v-on:click="scroll" style="transition: 2s;" href="#foodlist" role="button">See our recipes</a>
     </div>
   </div>
 </div>
