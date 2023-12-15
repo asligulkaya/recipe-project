@@ -1,4 +1,5 @@
 <template>
+  <NavbarComp/>
   <div>
     <h1>{{ recipe.title }}</h1>
     <div class="recipe-details">
@@ -23,7 +24,11 @@
 </template>
 <script>
 import sourceData from "@/data.json";
+import NavbarComp from "@/components/NavbarComp.vue";
 export default {
+  components: {
+    NavbarComp,
+  },
   computed: {
     recipeId() {
       return parseInt(this.$route.params.id);

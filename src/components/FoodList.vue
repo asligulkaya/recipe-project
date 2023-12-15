@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="foodlist">
       <div class="row">
         <Food v-for="recipe in recipes"
             class="my-3"

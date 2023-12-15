@@ -1,6 +1,5 @@
-<template>
-  <NavbarComp />
-  <div class="container my-3">
+<template>  
+  <div class="">
     <router-view />
   </div>
   <Footer/>
